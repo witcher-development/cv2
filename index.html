@@ -1,0 +1,52 @@
+<html>
+	<head>
+		<title>Roman Kuznietsov</title>
+
+		<script>
+		console.log('hi')
+		</script>
+
+		<style>
+		body { margin: 0 }
+		.select-mode {
+			position: absolute;
+			inset: 0;
+			width: 100vw;
+			height: 100vh;
+
+			display: flex;
+		}
+		.mode {
+			position: relative;
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			box-shadow: 1px 1px 1px #000;
+		}
+		.mode p {
+			font-size: 25px;
+			transition: transform 0.2s ease-out;
+		}
+		.mode:hover {
+			z-index: 1;
+			box-shadow: 2px 2px 2px #000;
+		}
+		.mode:hover p {
+			transform: scale(1.3);	
+		}
+
+		</style>
+	</head>
+
+	<body>
+		<div class="select-mode">
+			<div class="mode">
+				<p>My way to tell it</p>
+			</div>
+			<div class="mode">
+				<p>Conventional way</p>
+			</div>
+		</div>
+	</body>
+</html>
