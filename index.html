@@ -2,12 +2,40 @@
 	<head>
 		<title>Roman Kuznietsov</title>
 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 		<script>
-		console.log('hi')
+		let mode = null
+
+		const hideFirstScreen = () => {
+			document.querySelector('.select-mode').remove()
+		}
+		const showContent = (mode) => {
+			document.querySelector(`.content#${mode}`).classList.add('content_visible')
+		}
+
+		document.addEventListener('click', (e) => {
+			if (e.target.id === 'custom') {
+				mode = 'custom'
+				hideFirstScreen()
+				showContent(mode)
+				return
+			}
+			if (e.target.id === 'conv') {
+				mode = 'conv'
+				hideFirstScreen()
+				showContent(mode)
+				return
+			}
+
+		})
 		</script>
 
 		<style>
-		body { margin: 0 }
+		body { margin: 0; background-color: #F8F6E3 }
+		* { font-family: "Noto Sans", sans-serif; color: #333 }
 		.select-mode {
 			position: absolute;
 			inset: 0;
@@ -22,31 +50,60 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			box-shadow: 1px 1px 1px #000;
+			box-shadow: none;
+			transition: box-shadow 0.2s ease-out, background-color 0.3s ease-out;
+			cursor: pointer;
+			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
 		}
 		.mode p {
 			font-size: 25px;
+			font-weight: 500;
 			transition: transform 0.2s ease-out;
 		}
 		.mode:hover {
 			z-index: 1;
-			box-shadow: 2px 2px 2px #000;
+			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+		}
+		.mode#custom:hover {
+			background-color: #F5DAD2;
+		}
+		.mode#conv:hover {
+			background-color: #E5E483;
 		}
 		.mode:hover p {
 			transform: scale(1.3);	
+			color: #fff;
+			font-weight: 600;
+			text-shadow: 1px 0px 7px rgba(255,255,255,0.3), 
+				-1px 0px 7px rgba(255,255,255,0.3), 
+				0px 2px 7px rgba(255,255,255,0.3);
 		}
 
+		.content {
+			display: none;
+		}
+		.content_visible {
+			display: block;
+		}
 		</style>
 	</head>
 
 	<body>
 		<div class="select-mode">
-			<div class="mode">
+			<div class="mode" id="custom">
 				<p>My way to tell it</p>
 			</div>
-			<div class="mode">
+			<div class="mode" id="conv">
 				<p>Conventional way</p>
 			</div>
+		</div>
+
+		<div class="content" id="custom">
+			I'll try to explain my self best here
+		</div>
+
+		<div class="content" id="conv">
+			Classic set of boring sections
 		</div>
 	</body>
 </html>
