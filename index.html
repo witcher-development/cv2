@@ -31,18 +31,18 @@
 			}
 		})
 
-		// window.onload = () => {
-		// 	mode = 'custom'
-		// 	hideFirstScreen()
-		// 	showContent(mode)
-		// }
+		window.onload = () => {
+			mode = 'conv'
+			hideFirstScreen()
+			showContent(mode)
+		}
 		</script>
 
 		<style>
 		body { margin: 0; background-color: #F8F6E3 }
-		* { font-family: "Noto Sans", sans-serif; color: #333 }
-		h4 { margin: 15px 0 }
-		p { margin: 6px 0 }
+		* { font-family: "Noto Sans", sans-serif; color: #333; box-sizing: border-box; }
+		h4, h5 { margin: 15px 0 }
+		p { margin: 6px 0; font-size: 14px; }
 		ol, ul { padding-left: 19px }
 		.select-mode {
 			position: absolute;
@@ -88,6 +88,7 @@
 		}
 
 		.content {
+			width: 21.2cm;
 			display: none;
 			margin: 30px auto;
 			padding: 25px 30px;
@@ -95,6 +96,9 @@
 
 			border-radius: 6px;
 			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+		}
+		.content#conv {
+			padding: 12px 20px;
 		}
 		.content_visible {
 			display: block;
@@ -110,6 +114,22 @@
 			
 			font-style: italic;
 			opacity: 0.7;
+			text-align: center;
+		}
+
+		.header {
+			display: flex;
+			justify-content: space-between;
+
+			margin-bottom: 35px;
+		}
+		.contacts p, .contacts a {
+			display: block;
+			font-size: 12px;	
+			margin: 2px 0;
+		}
+
+		.title {
 			text-align: center;
 		}
 		</style>
@@ -140,11 +160,11 @@
 					<p><i>Most programming isn't rocket science. The hard part is communication and collaboration. You have a gap to close - I'll learn your approach, problems and the domain, and not only close the gap, but help you move faster.</i></p>
 					<p>On my last job I landed as frontend developer into a startup, but ended up:</p>
 					<ul>
-						<li>Owning whole the full stack platform.</li>
-						<li>Conducting the process of creating and enforcing conventions for the new code. With each task-related PR I migrated a part of old code to match those conventions too.</li>
-						<li>In the absense of the team lead I took charge at a team mate's critical situation with a delivery of a time-pressured feature. I identified misalignments between the requirements and implementation, found a temporary technical mitigation, fixed communication and documented everything to get team lead up to speed with the sutiation.</li>
-						<li>Fixing developer exprience and build times.</li>
-						<li>Managed navigating in an unkown domain (cybersecurity) and producing code that reflects this domain well.</li>
+						<li><p>Owning whole the full stack platform.</p></li>
+						<li><p>Conducting the process of creating and enforcing conventions for the new code. With each task-related PR I migrated a part of old code to match those conventions too.</p></li>
+						<li><p>In the absense of the team lead I took charge at a team mate's critical situation with a delivery of a time-pressured feature. I identified misalignments between the requirements and implementation, found a temporary technical mitigation, fixed communication and documented everything to get team lead up to speed with the situation.</p></li>
+						<li><p>Fixing developer exprience and build times.</p></li>
+						<li><p>Managed navigating in an unkown domain (cybersecurity) and producing code that reflects this domain well.</p></li>
 					</ul>
 				</li>
 				<li>
@@ -183,9 +203,9 @@
 					<p><i>GENERAL POINT ABOUT COMPANY SUCCESS</i></p>
 					<p>A few cool things I did on previous jobs:</p>
 					<ul>
-						<li>Orginized a knowledge-sharing meetup at a local cafe.</li>
-						<li>Writted down most of the team's decisions and outcomes of them.</li>
-						<li>Leveraged "Why we do this?" question.</li>
+						<li><p>Orginized a knowledge-sharing meetup at a local cafe.</p></li>
+						<li><p>Writted down most of the team's decisions and outcomes of them.</p></li>
+						<li><p>Leveraged "Why we do this?" question.</p></li>
 					</ul>
 				</li>
 				<li>
@@ -209,7 +229,37 @@
 		</div>
 
 		<div class="content" id="conv">
-			Classic set of boring sections
+			<div class="header">
+				<h4>Roman Kuznietsov</h4>
+
+				<div class="contacts">
+					<p>roman.web.kuznietsov@gmail.com</p>
+					<a href="linkedin.com/in/witcher-development" target="_blank">linkedin.com/in/witcher-development</a>
+					<a href="github.com/witcher-development" target="_blank">github.com/witcher-development</a>
+				</div>
+			</div>
+
+			<h3 class="title">Achievements/Cool things I did</h3>
+			<ol>
+				<li>
+					<h5>Saved company money on (not) hiring a backend dev.</h5>
+					<p>I landed as a frontend developer and slowly took over the backend part of the platform which allowed the team lead to focus on his responsibilities and illiminated the need to hire a backend developer for the company.</p>
+				</li>
+				<li>
+					<h5>Saved the day which let us do an investor demo.</h5>
+					<p>In the absense of the team lead I took charge at a team mate's critical situation with a delivery of a time-pressured feature. I identified misalignments between the requirements and implementation, found a temporary technical mitigation, fixed communication and documented everything to get team lead up to speed with the situation when he came back.</p>
+				</li>
+				<li>
+					<h5>Fixed developer experience on frontend on my own initiative.</h5>
+					<p>We had a crazy-slow Webpack config, old TS version and no linting rules.</p>
+					<p>I handled these topics one by one starting with a prototype in my free time, selling it to the team, implementing the full version and documenting it.</p>
+					<p>I had to fix ~1k liting errors to intruduce the new ESLint config.</p>
+				</li>
+				<li>
+					<h5>Promoted our culture and technical/communicational best practices.</h5>
+					<p>I completely onboarded with the way we work within 1 month. Part of the team that was there before me was falling behind on the values and approach. That was causing inefficiencies and conflicting situations, but I advocated for the values we aligned on with the teamlead and was bringing up problematic situations for a balanced discussion.</p>
+				</li>
+			</ol>
 		</div>
 	</body>
 </html>
