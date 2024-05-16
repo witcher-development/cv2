@@ -29,13 +29,21 @@
 				showContent(mode)
 				return
 			}
-
 		})
+
+		// window.onload = () => {
+		// 	mode = 'custom'
+		// 	hideFirstScreen()
+		// 	showContent(mode)
+		// }
 		</script>
 
 		<style>
 		body { margin: 0; background-color: #F8F6E3 }
 		* { font-family: "Noto Sans", sans-serif; color: #333 }
+		h4 { margin: 15px 0 }
+		p { margin: 6px 0 }
+		ol, ul { padding-left: 19px }
 		.select-mode {
 			position: absolute;
 			inset: 0;
@@ -81,9 +89,28 @@
 
 		.content {
 			display: none;
+			margin: 30px auto;
+			padding: 25px 30px;
+			width: 650px;
+
+			border-radius: 6px;
+			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
 		}
 		.content_visible {
 			display: block;
+		}
+
+
+		.disclaimer {
+			margin-bottom: 25px;
+			padding: 10px 15px;
+
+			border-radius: 6px;
+			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+			
+			font-style: italic;
+			opacity: 0.7;
+			text-align: center;
 		}
 		</style>
 	</head>
@@ -91,7 +118,7 @@
 	<body>
 		<div class="select-mode">
 			<div class="mode" id="custom">
-				<p>My way to tell it</p>
+				<p>Experimental way</p>
 			</div>
 			<div class="mode" id="conv">
 				<p>Conventional way</p>
@@ -99,7 +126,81 @@
 		</div>
 
 		<div class="content" id="custom">
-			I'll try to explain my self best here
+			<div class="disclaimer">
+				This is an attempt to challenge the conventional way of doing CV
+			</div>
+
+			<p>Hiring is a bit of a gamble for both sides. Let me try to make it less of a gamble for you.</p>
+			<p>Here is the list of risks I'd be considering as a hiring person and I guess you do too.</p>
+			<p>Let me answer them for you.</p>
+
+			<ol>
+				<li>
+					<h4>Will he manage this job?</h4>
+					<p><i>Most programming isn't rocket science. The hard part is communication and collaboration. You have a gap to close - I'll learn your approach, problems and the domain, and help you move faster.</i></p>
+					<p>On my last job I landed as frontend developer into a startup, but ended up:</p>
+					<ul>
+						<li>Fixing developer exprience and build times.</li>
+						<li>Conducting the process of creating and enforcing conventions for the new code. With each task-related PR I migrated a part of old code to match those conventions too.</li>
+						<li>In the absense of the team lead I took charge at a team mate's critical situation with a delivery of a time-pressured feature. I identified misalignments between the requirements and implementation, found a temporary technical mitigation, fixed communication and documented everything to get team lead up to speed with the sutiation.</li>
+						<li>Managed navigating in an unkown domain (cybersecurity) and producing code that reflects this domain well.</li>
+					</ul>
+				</li>
+				<li>
+					<h4>Will he bring something new to the table?</h4>
+					<p><i>I have an active life, many interests and 8 years of experience in the field behind me. There is a big chance that my background + your background would be a cool combo.</i></p>
+						PUT PERSONALIZATION HERE. BASED ON COMPANY
+				</li>
+				<li>
+					<h4>Does he have experience with technology X?</h4>
+					<p>...</p>
+				</li>
+				<li>
+					<h4>How long will it take for him to get up to speed?</h4>
+					<p>Last time it took me 1 week to figure out the main things. It took me 1 month to fully get onboard, to start promoting code conventions, culture, and actively participate in improving it.</p>
+				</li>
+				<li>
+					<h4>How does he take feedback?</h4>
+					<p><i>I love feedback, I'm happy to learn that I'm wrong and I'm actively looking for feedback myself.</i><p>
+					<p>On one of my previous jobs I had a one to one and got feedback that I need to be a more reliable team mate so that people are calm to skip manual testing of my PRs, because they are sure that I did my best. I still have it written down and use each PR as a chance to make people feel safe about my code.</p>
+				</li>
+				<li>
+					<h4>How does he give feedback?</h4>
+					<p>People say I'm pretty good at it :)</p>
+				</li>
+				<li>
+					<h4>Will he contribute to the things outside of his direct tasks?</h4>
+					<p><i>GENERAL POINT ABOUT COMPANY SUCCESS</i></p>
+					<p>A few cool things I did on previous jobs:</p>
+					<ul>
+						<li>Orginized a knowledge-sharing meetup at a local cafe.</li>
+						<li>Writted down most of the team's decisions and outcomes of them.</li>
+						<li>Leveraged "Why we do this?" question.</li>
+					</ul>
+				</li>
+				<li>
+					<h4>How does he operate in low-certainty environment?</h4>
+					<p><i>No one has all answers. If all details are figured out already - problem is already solved and I'm not needed there.</i></p>
+					<p>My last job is a low-certainty environment, because it's a startup. We had to operate with low about of info, make very high-level decisions and figure out together.</p>
+				</li>
+				<li>
+					<h4>Is he code-oriented or problem-oriented?</h4>
+					<p><i>I love solving problems. Code is just one way to sovle it. Honestly, the less code is required to solve a problem - the happier I am, because it's less to maintain</i></p>
+					<p>An example when understanding of the environment and the problem helped me to write less code and move on to the next problem faster:</p>
+					<p>We needed to dynamically identify meta data to a piece of content. Think of it as tags for articles. The proposed solution was to research for a 3rd party service which would give us a DB of tags and give set of tags per article. I suggested we just create a hardcoded table of tags and whenever we don't have a tag for article we mark it in the DB and manually process (create new tag and assign to acricle) which took much less time and worked great for a startup without clients.</p>
+				</li>
+				<li>
+					<h4>Does he require micromanagment?</h4>
+				</li>
+				<li>
+					<h4>Can we rely on his honest opinion during a crisis?</h4>
+					<p>When I work on a project I think of it as my own project that I do with my partners. Of course I would address a risk for my own project to my partners.</p>
+				</li>
+			</ol>
+
+			<div class="disclaimer">
+				Please let me know which questions you found useful and which you'd exclude.
+			</div>
 		</div>
 
 		<div class="content" id="conv">
