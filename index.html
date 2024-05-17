@@ -31,11 +31,11 @@
 			}
 		})
 
-		window.onload = () => {
-			mode = 'conv'
-			hideFirstScreen()
-			showContent(mode)
-		}
+		// window.onload = () => {
+		// 	mode = 'conv'
+		// 	hideFirstScreen()
+		// 	showContent(mode)
+		// }
 		</script>
 
 		<style>
@@ -51,6 +51,7 @@
 			height: 100vh;
 
 			display: flex;
+			display: none;
 		}
 		.mode {
 			position: relative;
@@ -96,6 +97,8 @@
 
 			border-radius: 6px;
 			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+
+			overflow: hidden;
 		}
 		.content#conv {
 			padding: 12px 20px;
@@ -228,7 +231,7 @@
 			</div>
 		</div>
 
-		<div class="content" id="conv">
+		<div class="content content_visible" id="conv">
 			<div class="header">
 				<div>
 					<h4 style="margin: 0 0 5px;">Roman Kuznietsov</h4>
@@ -250,7 +253,46 @@
 				</li>
 				<li>
 					<h5>Saved the day which let us do a demo for investor.</h5>
-					<p>In the absense of the team lead I took charge at a team mate's critical situation with a delivery of a time-pressured feature. I identified misalignments between the requirements and implementation, found a temporary technical mitigation, fixed communication and documented everything to get team lead up to speed with the situation when he came back.</p>
+
+					<p>The situation: (emoji exaggeration is intended for fun)</p>
+					<ol style="font-size: 12px;">
+						<li>
+							<p>We have an investor demo in a week. 🤯</p>
+						</li>
+						<li>
+							<p>The dev went down the rabbit hole writting core of the feature we presenting. 😵‍💫    </p>
+						</li>
+						<li>
+							<p>Secondary things (UIs, endpoints, etc) were not started yet. 🦿</p>
+						</li>
+						<li>
+							<p>Requirements and expectations were miscommunicated and misinterpreted. 🤐</p>
+						</li>
+						<li>
+							<p>Team Lead is on vacation. 🌴</p>
+						</li>
+						<li>
+							<p>I were busy with other things and just got involved. 🧐</p>
+						</li>
+					</ol>
+
+					<p>How I solved it:</p>
+					<ol style="font-size: 12px;">
+						<li>
+							<p>I went through the existing implementation with the dev, then through the requirements with CTO.</p>
+						</li>
+						<li>
+							<p>I proposed the changes to the scope to make it feasible, but still viable.</p>
+						</li>
+						<li>
+							<p>Helped with the implementation.</p>
+						</li>
+						<li>
+							<p>Documented all the story to onboard the Team Lead when he is back.</p>
+						</li>
+					</ol>
+
+					<!-- <p>In the absense of the team lead I took charge at a team mate's critical situation with a delivery of a time-pressured feature. I identified misalignments between the requirements and implementation, found a temporary technical mitigation, fixed communication and documented everything to get team lead up to speed with the situation when he came back.</p> -->
 				</li>
 				<li>
 					<h5>Fixed developer experience on frontend on my own initiative.</h5>
@@ -328,28 +370,39 @@
 					<h5>Luchs. 1 year.</h5>
 					<p>Israeli cybersecurity startup. 4 people.</p>
 					<p>Full Stack Engineer. Owning the platform part of product.</p>
+					<p>I worked with: TS, React, Python, Golang, Postgres, GCP.</p>
 				</li>
 				<li>
 					<h5>Contractbook. 1.5 years.</h5>
 					<p>Denmark startup. ~150 people.</p>
 					<p>Full Stack Engineer. Part of cross-functional team. Owning widgets, co-owning smaller features.</p>
+					<p>I worked with: TS, React, Elixir.</p>
 				</li>
 				<li>
 					<h5>Pouch. 1.5 years.</h5>
 					<p>UK startup. ~15 people.</p>
 					<p>Frontend Dev. Part of cross-functional team. Innovating on the product core.</p>
+					<p>I worked with: TS, Vue, Node, Browser Extensions.</p>
 				</li>
 				<li>
 					<h5>My own marketplace startup. 0.5 year.</h5>
 					<p>I didn't reach far, but better understood the complexity and what I'm missing.</p>
+					<p>I worked with: Node, MongoDB.</p>
 				</li>
 				<li>
 					<h5>LastMarket, Bart.sk, Faifly, Digital Mind, Freelance. 3.5 years.</h5>
 					<p>Mostly frontend. Working in smaller teams or alone.</p>
+					<p>I worked with: JS/TS, React/Vue, Node, PHP.</p>
 				</li>
 			</ol>
 
 			<h4 style="text-align: center; margin-top: 30px;"><a target="_blank" href="https://free-soap-21a.notion.site/Experience-full-version-f59c68cee1644180b38067213c31c104">Experience - Full Version</a></h4>
+
+			<img 
+				src="https://github.com/witcher-development/cv2/blob/main/photo_2024-05-17_12-07-16.jpg?raw=true"
+				alt="My photo"
+				style="width: calc(100% + 40px); margin: 0 -20px -12px;"
+			>
 		</div>
 	</body>
 </html>
