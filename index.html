@@ -31,11 +31,14 @@
 			}
 		})
 
-		// window.onload = () => {
-		// 	mode = 'conv'
-		// 	hideFirstScreen()
-		// 	showContent(mode)
-		// }
+		window.onload = () => {
+			// mode = 'conv'
+			// hideFirstScreen()
+			// showContent(mode)
+			if (window.location.href === "https://witcher-development.github.io/cv2/") {
+				document.querySelector(".evergreen").remove()
+			}
+		}
 		</script>
 
 		<style>
@@ -97,6 +100,7 @@
 
 			border-radius: 6px;
 			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
+			background-color: #F8F6E3;
 
 			overflow: hidden;
 		}
@@ -109,8 +113,8 @@
 
 
 		.disclaimer {
-			margin-bottom: 25px;
-			padding: 10px 15px;
+			margin-bottom: 15px;
+			padding: 5px 15px;
 
 			border-radius: 6px;
 			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 4px;
@@ -135,9 +139,11 @@
 		.title {
 			text-align: center;
 		}
-
 		.subtitle {
-			font
+			color: #666666;
+			font-size: 13px;
+			margin-top: -10px;
+			margin-bottom: 15px;
 		}
 		</style>
 	</head>
@@ -244,20 +250,27 @@
 
 				<div class="contacts">
 					<p>roman.web.kuznietsov@gmail.com</p>
-					<a href="linkedin.com/in/witcher-development" target="_blank">linkedin.com/in/witcher-development</a>
-					<a href="github.com/witcher-development" target="_blank">github.com/witcher-development</a>
+					<a href="https://linkedin.com/in/witcher-development" target="_blank">linkedin.com/in/witcher-development</a>
+					<a href="https://github.com/witcher-development" target="_blank">github.com/witcher-development</a>
 				</div>
+			</div>
+			
+			<div class="disclaimer evergreen">
+				<p>I constantly gather feedback and improve this CV.</p>
+				<p><a href="https://witcher-development.github.io/cv2/">Link to the evergreen version</a></p>
 			</div>
 
 			<h3 class="title">Achievements/Cool things I did</h3>
 			<ol>
 				<li>
 					<h5>Saved company money on (not) hiring a backend dev.</h5>
-					<p>Test</p>
+					<p class="subtitle">Luchs, Fullstack Engineer</p>
+
 					<p>I landed as a frontend developer and slowly took over the backend part of the platform which allowed the team lead to focus on his responsibilities and illiminated the need to hire a backend developer for the company.</p>
 				</li>
 				<li>
 					<h5>Saved the day which let us do a demo for investor.</h5>
+					<p class="subtitle">Luchs, Fullstack Engineer</p>
 
 					<p>The situation: (emoji exaggeration is intended for fun)</p>
 					<ol style="font-size: 12px;">
@@ -301,32 +314,44 @@
 				</li>
 				<li>
 					<h5>Fixed developer experience on frontend on my own initiative.</h5>
+					<p class="subtitle">Luchs, Frontend Developer (before started working with backend too)</p>
 					<p>We had a crazy-slow Webpack config, old TS version and no linting rules.</p>
 					<p>I handled these topics one by one starting with a prototype in my free time, selling it to the team, implementing the full version and documenting it.</p>
-					<p>I had to fix ~1k liting errors to intruduce the new ESLint config.</p>
+					<p>I led the conversation about the ESLint rules and found a balance of strictness to fit our team best.</p>
 				</li>
 				<li>
 					<h5>Promoted our culture and technical/communicational best practices.</h5>
+					<p class="subtitle">Luchs, Frontend Developer (before started working with backend too)</p>
+
 					<p>I completely onboarded with the way we work within 1 month. A part of the team that was there before me and was falling behind on the values and approach. That was causing inefficiencies and conflicting situations, but I advocated for the values we agreed on and was bringing up problematic situations for a balanced team-level discussion.</p>
 				</li>
 				<li>
 					<h5>Pushed the discussion of the codebase architecture and gradually rewrote the codebase.</h5>
+					<p class="subtitle">Luchs, Frontend Developer (before started working with backend too)</p>
+
 					<p>There was a messy startup's codebase which started suffering from lack of structure. I pushed the topic, prepared a few drafts, conducted the discussion and gradually rewrote most of codebase to match the new achitecture.</p>
 				</li>
 				<li>
 					<h5>Produced a high-quality codebase with a commitment to represent the real world nature of cybersecurity.</h5>
+					<p class="subtitle">Luchs, Fullstack Engineer</p>
+
 					<p>I came in with zero knowledge of cybersecurity and had to create the frontend of a related platform. With each new feature I commited into understanding of the nature of underlying processes to represent them in the codebase. The resulting codebase is split into modules representing real entities from the domain and is very consistent in using patterns.</p>
 				</li>
 				<li>
 					<h5>Leaded the innovation into the application core to make it more futureproof in the rapidly changing environment.</h5>
+					<p class="subtitle">Pouch, Frontend Developer</p>
+
 					<p>The main product of a company was a browser extension which relied on a functionality that was later announced to be disabled. As an attempt to keep us floating technology-wise I created a JSON-based language and the engine to run it. It supposed to let us continue operate via a loophole in the new rools.</p>
 				</li>
 				<li>
 					<h5>Mothballed codebase covering it with tests and documentation when startup closed.</h5>
+					<p class="subtitle">Luchs, Fullstack Engineer</p>
+
 					<p>The time has came to close the startup I worked in, but founders had plans for the codebase. It might be relaunched with new team later, so we did our best covering everything with tests and docs for the next engineers who gonna work on it.</p>
 				</li>
 				<li>
 					<h5>Games in Vue.</h5>
+					<p class="subtitle">LastMarket, Frontend Developer</p>
 					<p>Not proud of that, but it was games for an online casino. They were quite different, but pretty basic.</p>
 				</li>
 			</ol>
@@ -409,6 +434,120 @@
 				alt="My photo"
 				style="width: calc(100% + 40px); margin: 0 -20px -12px;"
 			>
+		</div>
+
+		<div class="content" style="margin-top: -1551px; position: relative; z-index: -1;">
+			<h5>Summary:</h5>
+			<p>Experienced software engineer with 8 years of experience in web development. Excellent at problem-solving, communication, self and group organization, technical research, user research and creativity.</p>
+
+			<h5>Hard skills:</h5>
+			<p>
+				HTML, CSS, SCSS, JavaScript, TypeScript, React, Redux, RTK, React Router, Recoil, Reatom, Zod, Eslint, Vue, NextJS, tRPC, Express, NestJS, Postgres, SQLite, MongoDB, Prisma, MikroORM, Unit tests, Enzyme, Docker, Vercel, Heroku, AWS, Python, FastAPI, TortoiseORM, Celery, MUI, Vite, Playwright, E2E Tests, ES6, CSS3, HTML5, Formik, Vuex, Svelte, Golang, Browser extensions, Leaflet, SQL, Templ, Air, sqlc, Linux, Neovim, Aerich, REST API, JWT, Canvas, Effector, Git, NPM, Yarn, Pnpm, Bun, Github, Gitlab, Immer, Axios, date-fns, Webpack, Rollup, Agile, Kanbun, Trello, Jira.
+			</p>
+
+			<h5>Soft skills:</h5>
+			<p>Passionate, motivated, determined, adaptable, autodidactic, fast learner, team player, leadership, empatic, responsible, effective communication, stress-resistant, business oriented, result oriented, entrepreneurial mindset, startup environment, problem-solving.</p>
+
+			<h5>Work Experience:</h5>
+			<p>
+				### Luchs (June 2023 - June 2024)
+
+				*Cybersecurity startup from Israel. 4 people in total.*
+
+				- React app with MUI and Python (FastAPI) on backend. Postgres + TortoiseORM.
+				- Couched CTO frontend.
+				- Iterated on features together with CTO.
+				- Brought code quality on the next level.
+				- Took charge of the platform.
+				- Took charge of a critical situation in absence of Team Lead to save investors demo.
+				- Addressed misalignments, highlighted risks, maintained the culture.
+				- Mothballed codebase covering it with tests and documentation when startup closed.
+
+				### My own marketplace startup (January 2023 - May 2023)
+
+				I didn't reach far, but better understood the complexity and what I'm missing.
+
+				Participated in events for startup founders, made connections, made market research, researched target audience?s experience, was getting feedback from other founders.
+
+				The only piece of code I wrote is a crawler for competitor websites to get some insights. Gathered ~15GB of data.
+
+				### Contractbook (June 2021 - December 2022)
+
+				*SaaS startup from Denmark. Entered a new cross-functional product team as 3rd member. 4 devs, 2 QA, UX, Team Lead, PM*
+
+				- Big React app transitioning from JS to TS. All new code in TS. Redux and redux-observable. Started playing with Immer closer to the end. Elixir on Backend - made small changes.
+				- When the team was not full yet I was helping another team with some pages + scrolling animation
+				- Home page - dashboard/hub page.
+				- Refactored a huge slice of old JS and Redux code to TS to enable the next iteration *(on my own, rest with the team)*
+				- Redesign of the Templates page
+				- Workspaces feature for the Templates page.
+				- Quite a complex multi-step multi-select component to invite people. Based on React Select, but hugely modified. We?ve done it as an autonomous sub-project together with another dev and UX designer testing a new iteration each hour.
+				- Started permissions project. Mostly discovery process and a lot of technical designing sessions resulting in a strongly typed system.
+				- High-level kanban, but for each sub-project each sub-team was deciding how to work on their own
+				- Really appreciate the awesome workshops we had led by Youenn (Team Lead) and sessions with Monika (QA Team Lead).
+
+				### Pouch/Requestum (January 2020 - June 2021)
+
+				*Requestum is a Ukrainian software house, Pouch is a UK product startup building a browser extension*
+
+				For a month or 2, I worked on internal projects:
+
+				- File sharing app. Prototype using native JS (blob). Took over the work of a senior dev and continued alone.
+				- React + TS + CSS app using Leaflet in a team with one backend/data engineer.
+				- Maintenance and small adjustments to a React CRM with a team of devs (3-4) and a PM. Agile
+
+				The rest of the time I was outsourced to be a part of the Pouch product team:
+
+				- Browser extension using VueJS for UI and a custom event-driven framework in TS for logic. Mostly new features: user account, redesign, etc.
+				- A lot of online shops reverse-engineering to make our extension run there using custom JS puppeteer-like scripts
+				- Was creating a JSON-based instructions language and engine for it to enable new features and improve DX of creating those custom scripts
+				- Agile
+
+				### LastMarket (June 2019 - January 2020)
+
+				*An online casino in Russia. 2 people team - me and a PHP dev/team lead*
+
+				- New games for the casino written in VueJS + Nuxt + CSS. Without canvas, pure HTML divs. Animations using keyframes and sprites
+				- Creation of a UI Kit from designs using VueJS and Storybook
+				- The first meeting with Typescript
+
+				### Bart.sk (January 2019 - June 2019)
+
+				*A software house in Slovakia*
+
+				- Maintenance and new features to a React CRM system under the mentorship of a team lead.
+				- Basic CSS
+
+				### Faifly (January 2018 - January 2019)
+
+				*A software house in Ukraine*
+
+				- Upgrades to the company?s landing page (CSS animations, layouts)
+				- Work with Page Builder with some custom JS in WP in 1 on 1 with a client from US
+				- Close cooperation with a QA person to make a lot of fixes in React and CSS.
+
+				### Digital Mind (June 2017 - January 2018)
+
+				*3 people digital studio in Ukraine*
+
+				- HTML+CSS responsive layouts
+				- Maintenance of VueJS + PHP website
+				- The first meeting with Git
+
+				### Freelance (June 2016 - June 2017)
+
+				- Small websites styles corrections
+				- A landing page
+			</p>
+
+			<h5>Education:</h5>
+			<p>Radio-technical collage in Ukraine 3 years</p>
+			<p>TUKE university 1 year</p>
+
+			<div class="disclaimer" style="margin-top: 50px">
+				<p>This CV contains a hidden section for robots.</p>
+				<p>Up to my believe it only contains keywords useful for scanners or information that you can find in the provided links.</p>
+			</div>
 		</div>
 	</body>
 </html>
