@@ -9,28 +9,6 @@
 		<script>
 		let mode = null
 
-		const hideFirstScreen = () => {
-			document.querySelector('.select-mode').remove()
-		}
-		const showContent = (mode) => {
-			document.querySelector(`.content#${mode}`).classList.add('content_visible')
-		}
-
-		document.addEventListener('click', (e) => {
-			if (e.target.id === 'custom') {
-				mode = 'custom'
-				hideFirstScreen()
-				showContent(mode)
-				return
-			}
-			if (e.target.id === 'conv') {
-				mode = 'conv'
-				hideFirstScreen()
-				showContent(mode)
-				return
-			}
-		})
-
 		window.onload = () => {
 			// mode = 'conv'
 			// hideFirstScreen()
@@ -44,52 +22,11 @@
 		<style>
 		body { margin: 0; background-color: #F8F6E3 }
 		* { font-family: "Noto Sans", sans-serif; color: #333; box-sizing: border-box; }
-		h4, h5 { margin: 15px 0 }
+		h3 { font-size: 16px }
+		h3, h4 { margin: 12px 0 }
+		h5 { margin: 8px 0 }
 		p { margin: 6px 0; font-size: 14px; }
-		ol, ul { padding-left: 19px }
-		.select-mode {
-			position: absolute;
-			inset: 0;
-			width: 100vw;
-			height: 100vh;
-
-			display: flex;
-			display: none;
-		}
-		.mode {
-			position: relative;
-			width: 100%;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			box-shadow: none;
-			transition: box-shadow 0.2s ease-out, background-color 0.3s ease-out;
-			cursor: pointer;
-			box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
-		}
-		.mode p {
-			font-size: 25px;
-			font-weight: 500;
-			transition: transform 0.2s ease-out;
-		}
-		.mode:hover {
-			z-index: 1;
-			box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-		}
-		.mode#custom:hover {
-			background-color: #F5DAD2;
-		}
-		.mode#conv:hover {
-			background-color: #E5E483;
-		}
-		.mode:hover p {
-			transform: scale(1.3);	
-			color: #fff;
-			font-weight: 600;
-			text-shadow: 1px 0px 7px rgba(255,255,255,0.3), 
-				-1px 0px 7px rgba(255,255,255,0.3), 
-				0px 2px 7px rgba(255,255,255,0.3);
-		}
+		ol, ul { padding-left: 19px; margin: 12px 0 }
 
 		.content {
 			width: 21.2cm;
@@ -113,7 +50,7 @@
 
 
 		.disclaimer {
-			margin-bottom: 15px;
+			margin-bottom: 18px;
 			padding: 5px 15px;
 
 			border-radius: 6px;
@@ -128,7 +65,7 @@
 			display: flex;
 			justify-content: space-between;
 
-			margin-bottom: 35px;
+			margin-bottom: 25px;
 		}
 		.contacts p, .contacts a {
 			display: block;
@@ -141,106 +78,31 @@
 		}
 		.subtitle {
 			color: #666666;
-			font-size: 13px;
+			font-size: 12px;
 			margin-top: -10px;
-			margin-bottom: 15px;
+			margin-bottom: 8px;
+		}
+
+		.exp_title {
+				display: flex;
+				align-items: center;
+				gap: 6px;
+		}
+		.exp_title h5 {
+				margin: 0
+		}
+		.exp_title p {
+				margin: 0;
+		}
+
+		b {
+				font-weight: 600;
+				font-size: 13px
 		}
 		</style>
 	</head>
 
 	<body>
-		<div class="select-mode">
-			<div class="mode" id="custom">
-				<p>Experimental way</p>
-			</div>
-			<div class="mode" id="conv">
-				<p>Conventional way</p>
-			</div>
-		</div>
-
-		<div class="content" id="custom">
-			<div class="disclaimer">
-				This is an attempt to challenge the conventional way of doing CV
-			</div>
-
-			<p>Hiring is a bit of a gamble for both sides. Let me try to make it less of a gamble for you.</p>
-			<p>Here is the list of risks I'd be considering as a hiring person and I guess you do too.</p>
-			<p>Let me answer them for you.</p>
-
-			<ol>
-				<li>
-					<h4>Will he manage this job?</h4>
-					<p><i>Most programming isn't rocket science. The hard part is communication and collaboration. You have a gap to close - I'll learn your approach, problems and the domain, and not only close the gap, but help you move faster.</i></p>
-					<p>On my last job I landed as frontend developer into a startup, but ended up:</p>
-					<ul>
-						<li><p>Owning whole the full stack platform.</p></li>
-						<li><p>Conducting the process of creating and enforcing conventions for the new code. With each task-related PR I migrated a part of old code to match those conventions too.</p></li>
-						<li><p>In the absense of the team lead I took charge at a team mate's critical situation with a delivery of a time-pressured feature. I identified misalignments between the requirements and implementation, found a temporary technical mitigation, fixed communication and documented everything to get team lead up to speed with the situation.</p></li>
-						<li><p>Fixing developer exprience and build times.</p></li>
-						<li><p>Managed navigating in an unkown domain (cybersecurity) and producing code that reflects this domain well.</p></li>
-					</ul>
-				</li>
-				<li>
-					<h4>Does he have experience with technology X?</h4>
-					<p>...</p>
-				</li>
-				<li>
-					<h4>How long will it take for him to get up to speed?</h4>
-					<p>Last time it took me 1 week to figure out the main things. It took me 1 month to fully get onboard, to start promoting code conventions, culture, and actively participate in improving it.</p>
-				</li>
-				<li>
-					<h4>How does he take feedback?</h4>
-					<p><i>I love feedback, I'm happy to learn that I'm wrong and I'm actively looking for feedback myself.</i><p>
-					<p>On one of my previous jobs I had a one to one and got feedback that I need to be a more reliable team mate so that people are calm to skip manual testing of my PRs, because they are sure that I did my best. I still have it written down and use each PR as a chance to make people feel safe about my code.</p>
-				</li>
-				<li>
-					<h4>How does he give feedback?</h4>
-					<p>People say I'm pretty good at it :)</p>
-				</li>
-				<li>
-					<h4>Is he code-oriented or problem-oriented?</h4>
-					<p><i>I love solving problems. Code is just one way to sovle it. Honestly, the less code is required to solve a problem - the happier I am, because it's less to maintain</i></p>
-					<p>An example when understanding of the environment and the problem helped me to write less code and move on to the next problem faster:</p>
-					<p>We needed to dynamically identify meta data to a piece of content. Think of it as tags for articles. The proposed solution was to research for a 3rd party service which would give us a DB of tags and give set of tags per article. I suggested we just create a hardcoded table of tags and whenever we don't have a tag for article we mark it in the DB and manually process (create new tag and assign to acricle) which took much less time and worked great for a startup without clients.</p>
-				</li>
-				<li>
-					<h4>Does he require micromanagment?</h4>
-				</li>
-				<li>
-					<h4>Will he bring something new to the table?</h4>
-					<p><i>I have an active life, many interests and 8 years of experience in the field behind me. There is a big chance that my background + your background would be a cool combo.</i></p>
-						PUT PERSONALIZATION HERE. BASED ON COMPANY
-				</li>
-				<li>
-					<h4>Will he contribute to the things outside of his direct tasks?</h4>
-					<p><i>GENERAL POINT ABOUT COMPANY SUCCESS</i></p>
-					<p>A few cool things I did on previous jobs:</p>
-					<ul>
-						<li><p>Orginized a knowledge-sharing meetup at a local cafe.</p></li>
-						<li><p>Writted down most of the team's decisions and outcomes of them.</p></li>
-						<li><p>Leveraged "Why we do this?" question.</p></li>
-					</ul>
-				</li>
-				<li>
-					<h4>How does he operate in low-certainty environment?</h4>
-					<p><i>No one has all answers. If all details are figured out already - problem is already solved and I'm not needed there.</i></p>
-					<p>My last job is a low-certainty environment, because it's a startup. We had to operate with low amount of info, make very high-level decisions and figure out together.</p>
-				</li>
-				<li>
-					<h4>Is he autonomous?</h4>
-					<p>----stick to process, keep people in loop, give estimate and update when it changes, find issues, write them down and solve whatever else fits into the same scope, have question - ask, need help - let know.----</p>
-				</li>
-				<li>
-					<h4>Can we rely on his honest opinion during a crisis?</h4>
-					<p>When I work on a project I think of it as my own project that I do with my partners. Of course I would address a risk for my own project to my partners.</p>
-				</li>
-			</ol>
-
-			<div class="disclaimer">
-				Please let me know which questions you found useful and which you'd exclude
-			</div>
-		</div>
-
 		<div class="content content_visible" id="conv">
 			<div class="header">
 				<div>
@@ -260,195 +122,124 @@
 				<p><a href="https://witcher-development.github.io/cv2/">Link to the evergreen version</a></p>
 			</div>
 
-			<h3 class="title">Achievements/Cool things I did</h3>
+			<h3 class="title">Places I worked in</h3>
 			<ol>
 				<li>
-					<h5>Saved company money on (not) hiring a backend dev.</h5>
-					<p class="subtitle">Luchs, Fullstack</p>
-
-					<p>I landed as a frontend developer and slowly took over the backend part of the platform which allowed the team lead to focus on his responsibilities and illiminated the need to hire a backend developer for the company.</p>
+						<div class="exp_title">
+								<h5>Slido. 2 year.</h5>
+								<p class="subtitle">Part of Cisco, ~200 people.</p>
+						</div>
+						<p>Highly interactive collaborative platform for engaging audience on calls, workshops, conferences, etc.</p>
+					<p>Full Stack Engineer. Part of cross functional product team owning core experience.</p>
+					<p>I worked with: <b>TS, React, Angular, Node, A11Y, telemetry, monorepo</b>.</p>
 				</li>
 				<li>
-					<h5>Saved the day which let us do a demo for investor.</h5>
-					<p class="subtitle">Luchs, Fullstack</p>
-
-					<p>The situation: (emoji exaggeration is intended for fun)</p>
-					<ol style="font-size: 12px;">
-						<li>
-							<p>We have an investor demo in a week. 🤯</p>
-						</li>
-						<li>
-							<p>The dev went down the rabbit hole writting core of the feature we presenting. 😵‍💫    </p>
-						</li>
-						<li>
-							<p>Secondary things (UIs, endpoints, etc) were not started yet. 🦿</p>
-						</li>
-						<li>
-							<p>Requirements and expectations were miscommunicated and misinterpreted. 🤐</p>
-						</li>
-						<li>
-							<p>Team Lead is on vacation. 🌴</p>
-						</li>
-						<li>
-							<p>I was busy with other things and just got involved. 🧐</p>
-						</li>
-					</ol>
-
-					<p>How I solved it:</p>
-					<ol style="font-size: 12px;">
-						<li>
-							<p>I went through the existing implementation with the dev, then through the requirements with CTO.</p>
-						</li>
-						<li>
-							<p>I proposed the changes to the scope to make it feasible, but still viable.</p>
-						</li>
-						<li>
-							<p>Helped with the implementation.</p>
-						</li>
-						<li>
-							<p>Documented all the story to onboard the Team Lead when he is back.</p>
-						</li>
-					</ol>
-				</li>
-				<li>
-					<h5>Made sub-project accessibility compliant.</h5>
-					<p class="subtitle">Slido, Fullstack</p>
-					<p>Slido was doing a FedRAMP version of the product that, amoung the rest, had to be a11y compliant.</p>
-					<p>Back then Slido didn't have a developed a11y expertise and only very minimal a11y-related things were done for FedRAMP project.</p>
-					<p>I took role of handling this topic and started learning a11y. After half a year of learning and implementing it on my own we send it for a test to a dedicated Cisco team.</p>
-					<p>There still were some findings in more tricky and deep areas, which helped me to know the topic even better.</p>
-				</li>
-				<li>
-					<h5>Paritipated in Battlecode 2026 and got high rating</h5>
-					<p>It was in Java, wrote it first time.</p>
-					<p>https://play.battlecode.org/bc26/team/2140</p>
-				</li>
-				<li>
-					<h5>Fixed developer experience on frontend on my own initiative.</h5>
-					<p class="subtitle">Luchs, Frontend (before started working with backend too)</p>
-					<p>We had a crazy-slow Webpack config, old TS version and no linting rules.</p>
-					<p>I handled these topics one by one starting with a prototype in my free time, selling it to the team, implementing the full version and documenting it.</p>
-					<p>I led the conversation about the ESLint rules and found a balance of strictness to fit our team best.</p>
-				</li>
-				<li>
-					<h5>Promoted our culture and technical/communicational best practices.</h5>
-					<p class="subtitle">Luchs, Frontend (before started working with backend too)</p>
-
-					<p>I completely onboarded with the way we work within 1 month. A part of the team that was there before me and was falling behind on the values and approach. That was causing inefficiencies and conflicting situations, but I advocated for the values we agreed on and was bringing up problematic situations for a balanced team-level discussion.</p>
-				</li>
-				<li>
-					<h5>Pushed the discussion of the codebase architecture and gradually rewrote the codebase.</h5>
-					<p class="subtitle">Luchs, Frontend (before started working with backend too)</p>
-
-					<p>There was a messy startup's codebase which started suffering from lack of structure. I pushed the topic, prepared a few drafts, conducted the discussion and gradually rewrote most of codebase to match the new achitecture.</p>
-				</li>
-				<li>
-					<h5>Produced a high-quality codebase with a commitment to represent the real world nature of cybersecurity.</h5>
-					<p class="subtitle">Luchs, Fullstack</p>
-
-					<p>I came in with zero knowledge of cybersecurity and had to create the frontend of a related platform. With each new feature I commited into understanding of the nature of underlying cybersecurity processes to represent them in type system. The resulting codebase is split into modules representing real entities from the domain and is consistent in using patterns.</p>
-				</li>
-				<li>
-					<h5>Leaded the innovation into the application core to make it more futureproof in the rapidly changing environment.</h5>
-					<p class="subtitle">Pouch, Frontend</p>
-
-					<p>The main product of a company was a browser extension which relied on a functionality that was later announced to be disabled. As an attempt to keep us floating technology-wise I created a JSON-based language and the engine to run it. It supposed to let us continue operate via a loophole in the new rools.</p>
-				</li>
-				<li>
-					<h5>Mothballed codebase covering it with tests and documentation when startup closed.</h5>
-					<p class="subtitle">Luchs, Fullstack</p>
-
-					<p>The time has came to close the startup I worked in, but founders had plans for the codebase. It might be relaunched with new team later, so we did our best covering everything with tests and docs for the next engineers who gonna work on it.</p>
-				</li>
-				<li>
-					<h5>Games in Vue.</h5>
-					<p class="subtitle">LastMarket, Frontend</p>
-					<p>Games weren't complicated, but diverse. I've done it without any js game framework or engine.</p>
-				</li>
-			</ol>
-
-			<h3 class="title" style="margin-top: 30px;">Technologies I have experience with</h3>
-			<ol>
-				<li>
-					<h5>Frontend stack</h5>
-					<p>JS/TS, styling, React, other frameworks and ecosystem. HTMX.</p>
-				</li>
-				<li>
-					<h5>Node, Python, Golang (using for pet-projects)</h5>
-				</li>
-				<li>
-					<h5>Postgres, Mongo, sqlite (only used for pet-projects yet, but my god how good it is)</h5>
-				</li>
-				<li>
-					<h5>Tests: playwright, jest, rtl, etc</h5>
-				</li>
-				<li>
-					<h5>Infra</h5>
-					<p>Linux, Docker, AWS, CI/CD, VPS (using for pet-projects).</p>
-				</li>
-				<li>
-					<h5>A11Y</h5>
-				</li>
-			</ol>
-
-			<h3 class="title" style="margin-top: 30px;">Things I want to try (not exhaustive)</h3>
-			<ol>
-				<li>
-					<h5>Optimizations</h5>
-					<p>Profiling performance-sensetive apps, optimizing DB operations</p>
-				</li>
-				<li>
-					<h5>TigerBeetle style</h5>
-					<p>https://tigerstyle.dev/</p>
-				</li>
-				<li>
-					<h5>Protobufs</h5>
-				</li>
-				<li>
-					<h5>Rust, Zig</h5>
-				</li>
-				<li>
-					<h5>Video, audio, network processing</h5>
-				</li>
-			</ol>
-
-			<h3 class="title" style="margin-top: 30px;">Places I worked in</h3>
-			<ol>
-				<li>
-					<h5>Slido. 1.5 year.</h5>
-					<p>Slovak (later Cisco acquired) company. ~200 people.</p>
-					<p>Full Stack Engineer. Been part of many teams based on demand.</p>
-					<p>I worked with: TS, React, Node, A11Y, large old codebase.</p>
-				</li>
-				<li>
+						<div class="exp_title">
 					<h5>Luchs. 1 year.</h5>
-					<p>Israeli cybersecurity startup. 4 people.</p>
-					<p>Full Stack Engineer. Owning the platform part of product.</p>
-					<p>I worked with: TS, React, Python, Golang, Postgres, GCP.</p>
+					<p class="subtitle">Cybersecurity startup. 4 people.</p>
+						</div>
+						<p>Automatic scanning tool for automotive compliance standards.</p>
+					<p>Full Stack Engineer. Owned the frontend and backend of the product.</p>
+					<p>I worked with: <b>TS, React, Redux, MUI, Python, FastAPI, SQLAlchemy, Golang, Postgres, GCP, Docker</b>.</p>
 				</li>
 				<li>
+						<div class="exp_title">
 					<h5>Contractbook. 1.5 years.</h5>
-					<p>Denmark startup. ~150 people.</p>
-					<p>Full Stack Engineer. Part of cross-functional team. Owning widgets, co-owning smaller features.</p>
-					<p>I worked with: TS, React, Elixir.</p>
+					<p class="subtitle">Scale-up, ~150 people.</p>
+						</div>
+						<p>Contract management platform.</p>
+					<p>Full Stack Engineer. Part of cross functional product team owning templates and workspaces features.</p>
+					<p>I worked with: <b>TS, React, Redux, contributions to Elixir backend</b>.</p>
 				</li>
 				<li>
+						<div class="exp_title">
 					<h5>Pouch. 1.5 years.</h5>
-					<p>UK startup. ~15 people.</p>
-					<p>Frontend Dev. Part of cross-functional team. Innovating on the product core.</p>
-					<p>I worked with: TS, Vue, Node, Browser Extensions.</p>
+					<p class="subtitle">E-commerce startup, ~15 people.</p>
+						</div>
+						<p>Shopping experience automation extension + savings.</p>
+					<p>Frontend Developer. Part of cross functional team owning the extension code.</p>
+					<p>I worked with: <b>TS, Vue, Node, browser extensions, events-driven system, affiliate network</b>.</p>
 				</li>
 				<li>
 					<h5>My own marketplace startup. 0.5 year.</h5>
-					<p>I didn't reach far, but better understood the complexity and what I'm missing.</p>
-					<p>I worked with: Node, MongoDB.</p>
+					<p>Market research, competitor scrapping, communication and partnersip experience.</p>
+					<p>I worked with: <b>Node, MongoDB</b>.</p>
 				</li>
 				<li>
 					<h5>LastMarket, Bart.sk, Faifly, Digital Mind, Freelance. 3.5 years.</h5>
-					<p>Mostly frontend. Working in smaller teams or alone.</p>
-					<p>I worked with: JS/TS, React/Vue, Node, PHP.</p>
+					<p>Mostly frontend. Working in smaller teams or solo.</p>
+					<p>I worked with: <b>JS/TS, React/Vue, Node, PHP</b>.</p>
 				</li>
 			</ol>
+
+			<h3 class="title" style="margin-top: 30px;">Achievements/Cool things I did</h3>
+			<ol>
+				<li>
+						<div class="exp_title">
+					<h5>Prolonged startup runway for half year by taking on more responsibility.</h5>
+					<p class="subtitle">Luchs</p>
+						</div>
+
+						<p>I was hired as a frontend developer. It took me half a year to address the bottlenecks we had there and make frontend move with required speed. After that I volunteered to additionally take backend from team lead's plate to allow them to focus on the engine. This way I owned the web platform part of the product and we could save money on not hiring a backend developer.</p>
+				</li>
+				<li>
+						<div class="exp_title">
+					<h5>Unblocked one of the biggest deals by developing expertise lacking in the company.</h5>
+					<p class="subtitle">Slido</p>
+						</div>
+					<p>There was a project to make a version of Slido deployable on premise for highest security and compliance environments (government, most demanding corporations). One of the critical requirements was for this product to be compliant with accessibility standards. There was no a11y expertise in the team and I volunteered to learn it and fulfill the requirement. In half a year it was done.</p>
+				</li>
+				<li>
+						<div class="exp_title">
+					<h5>Trippled frontend development speed mid-flight.</h5>
+					<p class="subtitle">Luchs</p>
+						</div>
+						<p>When I joined the company there was no set architecture, build system was slow, no code standards/linting/formatting. And a lot of work to be done. When I learned more of the context, I suggsted to take care of those slowing factors. After a brief discussion on the goals I made a prototype over the weekends, demoed it, received feedback, polished, and released. It allowed us to move faster, because of faster builds, agreed on standards/less unimportant discussions, easier to extend code due to modular architecture, etc</p>
+				</li>
+				<li>
+					<h5>Received high score in one of the top programming/AI/strategy competitions.</h5>
+					<p>Battlecode is programming competiton about creating your own autonomous bot that would fight in a wargame against other teams' bots. It's month long and very intence. I participated in 2026 Cambrige edition solo. It was my second time in Battlecode and it was in Java, which I wrote for the first time. I've beat some of the teams in top 5.</p>
+				</li>
+				<li>
+						<div class="exp_title">
+					<h5>Resolved a critical problem and saved investor demo.</h5>
+					<p class="subtitle">Luchs</p>
+						</div>
+
+						<p>Luchs was a highly autonomous place, where people rely on each other's communication and don't micromanage. A week before an important investor demo I learned that the preparations for the demo led by another developer silently went in a very wrong direction and the demo is at risk. I stepped in: learned about the state of the implementation; talked to CTO to understand what should be done and priorities; took charge of the rest of development and closely led the process; we delivered most of the scope; we went through the results with CTO to adjust the presentation. Demo went well and I documented all the tech dept we accumulated and led a retro to avoid such situations in future.</p>
+
+				</li>
+				<li>
+						<div class="exp_title">
+					<h5>Intensly collaborated with a SME and created a codebase that reflects the domain.</h5>
+					<p class="subtitle">Luchs</p>
+						</div>
+
+					<p>I came in with zero knowledge of cybersecurity. Before each new feature I requested a domain lesson from CTO. This way I created a codebase that reinforces correctness of real world concepts in type system and modules organization.</p>
+				</li>
+				<li>
+					<h5>Led an effort to rework core logic around new platform rules that would kill the product.</h5>
+					<p class="subtitle">Pouch</p>
+
+					<p>The core of the product (browser extension) relied on a browser API that was announced to be disallowed. I proposed a creative solution, made a prototype, involved others into development. The solution is a JSON-based instruction set, interpreter for it, and a GUI to create scripts that use those instructions. It also addressed other top priority bottlenecks that company had.</p>
+				</li>
+				<li>
+					<h5>Mothballed codebase covering it with tests and documentation when startup closed.</h5>
+					<p class="subtitle">Luchs</p>
+
+					<p>The time has came to close the startup I worked in, but founders had plans for the codebase. It might be relaunched with new team later. There was no any kind of tests or setup for them yet. I created a Docker based setup for reliable, isolated e2e tests, the tests themselves, and the documentation.</p>
+				</li>
+				<li>
+						<div class="exp_title">
+					<h5>Browser games.</h5>
+					<p class="subtitle">LastMarket</p>
+						</div>
+
+					<p>I wrote browser based games in pure JS and Vue. It was a diverse set of 2D games.</p>
+				</li>
+			</ol>
+
+
 
 			<h4 style="text-align: center; margin-top: 30px;"><a target="_blank" href="https://free-soap-21a.notion.site/Experience-full-version-f59c68cee1644180b38067213c31c104">Experience - Full Version</a></h4>
 			<h4 style="text-align: center; margin-bottom: 30px"><a target="_blank" href="https://free-soap-21a.notion.site/Pet-Projects-d9b7857ce13a4b64b979cc22686e0fb7">Pet projects</a></h4>
@@ -462,7 +253,7 @@
 
 		<div class="content" style="margin-top: -1551px; position: relative; z-index: -1;">
 			<h5>Summary:</h5>
-			<p>Experienced software engineer with 8 years of experience in web development. Excellent at problem-solving, communication, self and group organization, technical research, user research and creativity.</p>
+			<p>Experienced software engineer with 10 years of experience in web development. Excellent at problem-solving, communication, self and group organization, technical research, user research and creativity.</p>
 
 			<h5>Hard skills:</h5>
 			<p>
